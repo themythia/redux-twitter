@@ -1,7 +1,10 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
-import './index.css'
-import App from './components/App'
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import './index.css';
+import App from './components/App';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducer from './reducers';
 
 function ColorfulBorder() {
   return (
@@ -14,13 +17,15 @@ function ColorfulBorder() {
         <li className='border-item' style={{ background: 'var(--aqua)' }} />
       </ul>
     </React.Fragment>
-  )
+  );
 }
 
+const store = createStore(reducer);
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <ColorfulBorder />
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
-)
+);
