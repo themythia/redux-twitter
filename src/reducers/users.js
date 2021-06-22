@@ -5,7 +5,7 @@ const users = (state = {}, action) => {
     case RECEIVE_USERS:
       return {
         ...state,
-        ...users,
+        ...action.users,
       };
     default:
       return state;
