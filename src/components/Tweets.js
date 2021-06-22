@@ -5,7 +5,9 @@ const Tweets = () => {
   const users = useSelector((store) => store.users);
   const tweets = useSelector((store) => store.tweets);
   const usersArray = Object.keys(users).map((username) => users[username]);
-  const tweetsArray = Object.keys(tweets).map((tweet) => tweets[tweet]);
+  const tweetsArray = Object.keys(tweets)
+    .map((tweet) => tweets[tweet])
+    .sort((a, b) => b.timestamp - a.timestamp);
   console.log('users', users);
   console.log('tweetsArray', tweetsArray);
 
@@ -23,6 +25,7 @@ const Tweets = () => {
               replies={tweet.replies}
               replyingTo={tweet.replyingTo}
               avatarURL={users[tweet.author].avatarURL}
+              name={users[tweet.author].name}
             />
           </li>
         ))}

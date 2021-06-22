@@ -20,7 +20,8 @@
 }
 
 html {
-  font-family: proxima-nova, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  font-family: proxima-nova, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -62,4 +63,44 @@ li {
   min-width: 280px;
   margin: 0 auto;
   padding: 20px;
+}
+.tweet {
+  border: 1px white solid;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+}
+
+.tweet-right-bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.tweet-name {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.tweet-text {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.text-faded {
+  color: #969696;
+}
+
+.tweet-date {
+  font-size: 15px;
+}
+
+.tweet-replyingTo {
+  font-size: 13px;
 }
