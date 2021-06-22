@@ -29,6 +29,7 @@ const tweet = (state = {}, action) => {
   }
 };
 export default tweet;
+
 // FOR ADD_TWEET
 // -------------------------------------
 // Structure of a tweet
