@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Tweet from './Tweet';
+
 const Tweets = () => {
   const users = useSelector((store) => store.users);
   const tweets = useSelector((store) => store.tweets);
@@ -11,13 +12,15 @@ const Tweets = () => {
     .sort((a, b) => b.timestamp - a.timestamp);
 
   return (
-    <div>
-      {Object.keys(users).length !== 0 &&
-        tweetsArray.map((tweet, index) => (
-          <li key={index}>
-            <Tweet id={tweet.id} />
-          </li>
-        ))}
+    <div className='container'>
+      <ul>
+        {Object.keys(users).length !== 0 &&
+          tweetsArray.map((tweet, index) => (
+            <li key={index}>
+              <Tweet id={tweet.id} />
+            </li>
+          ))}
+      </ul>
     </div>
   );
 };

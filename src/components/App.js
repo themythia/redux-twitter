@@ -2,6 +2,8 @@ import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import Tweets from './Tweets';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import TweetPage from './TweetPage';
 export default function App() {
   const dispatch = useDispatch();
   const store = useSelector((store) => store);
@@ -10,9 +12,9 @@ export default function App() {
   }, [dispatch]);
   console.log('Store: ', store);
   return (
-    <div className='container'>
-      <span>Redux Course Curriculum</span>
-      <Tweets />
-    </div>
+    <Router>
+      <Route exact path='/' component={Tweets} />
+      <Route path='/tweet/:id' component={TweetPage} />
+    </Router>
   );
 }
