@@ -7,6 +7,7 @@ export const TOGGLE_LIKE = 'TOGGLE_LIKE';
 export const receiveTweets = (tweets) => ({ type: RECEIVE_TWEETS, tweets });
 
 const addTweet = (tweet) => ({ type: ADD_TWEET, tweet });
+
 export const handleAddTweet = (text, replyingTo) => {
   return (dispatch, getState) => {
     const { authedUser } = getState();

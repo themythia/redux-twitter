@@ -104,3 +104,21 @@ li {
 .tweet-replyingTo {
   font-size: 13px;
 }
+
+.tweet-replies {
+  margin-right: 20px;
+}
+
+.tweet-reply-button {
+  margin-right: 10px;
+}
+.tweet-reply-button:hover {
+  color: red;
+}
+
+.tweet-like-button {
+  margin-right: 10px;
+}
+.tweet-like-button:hover {
+  color: pink;
+}

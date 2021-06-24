@@ -9,11 +9,11 @@ const tweet = (state = {}, action) => {
       };
     case ADD_TWEET:
       let replyingTo = {};
-      if (action.replyingTo !== null) {
+      if (action.tweet.replyingTo !== null) {
         replyingTo = {
           [action.tweet.replyingTo]: {
-            ...state[action.tweet.ReplyingTo],
-            replies: state[action.tweet.ReplyingTo].replies.concat([
+            ...state[action.tweet.replyingTo],
+            replies: state[action.tweet.replyingTo].replies.concat([
               action.tweet.id,
             ]),
           },
