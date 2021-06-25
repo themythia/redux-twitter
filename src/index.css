@@ -120,7 +120,7 @@ li {
   margin-right: 10px;
 }
 .tweet-like-button:hover {
-  color: pink;
+  color: purple !important;
 }
 
 .active {

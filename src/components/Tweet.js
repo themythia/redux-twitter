@@ -51,6 +51,11 @@ const Tweet = ({ id }) => {
                   <FaHeart
                     className='tweet-like-button'
                     onClick={handleLikes}
+                    style={
+                      tweet.likes.includes(authedUser)
+                        ? { color: 'pink' }
+                        : { color: 'white' }
+                    }
                   />
                   <span>{tweet.likes.length}</span>
                 </div>
