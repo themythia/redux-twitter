@@ -30,7 +30,7 @@ const Tweet = ({ id }) => {
               </p>
               {tweet.replyingTo !== null && (
                 <p className='tweet-replyingTo text-faded'>
-                  Replying to @{tweet.author}
+                  Replying to @{tweets[tweet.replyingTo].author}
                 </p>
               )}
               <p className='tweet-text'>{tweet.text}</p>

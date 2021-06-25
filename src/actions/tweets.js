@@ -8,7 +8,7 @@ export const receiveTweets = (tweets) => ({ type: RECEIVE_TWEETS, tweets });
 
 const addTweet = (tweet) => ({ type: ADD_TWEET, tweet });
 
-export const handleAddTweet = (text, replyingTo) => {
+export const handleAddTweet = (text, replyingTo = null) => {
   return (dispatch, getState) => {
     const { authedUser } = getState();
     return saveTweet({ text, author: authedUser, replyingTo }).then((tweet) =>

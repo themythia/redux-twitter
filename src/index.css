@@ -122,3 +122,7 @@ li {
 .tweet-like-button:hover {
   color: pink;
 }
+
+.active {
+  text-decoration: underline;
+}

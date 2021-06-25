@@ -12,7 +12,7 @@ const Tweets = () => {
     .sort((a, b) => b.timestamp - a.timestamp);
 
   return (
-    <div className='container'>
+    <React.Fragment>
       <ul>
         {Object.keys(users).length !== 0 &&
           tweetsArray.map((tweet, index) => (
@@ -21,7 +21,7 @@ const Tweets = () => {
             </li>
           ))}
       </ul>
-    </div>
+    </React.Fragment>
   );
 };
 export default Tweets;

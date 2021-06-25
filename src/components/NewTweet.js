@@ -1,5 +1,5 @@
 import React from 'react';
-import { dispatch, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { handleAddTweet } from '../actions/tweets';
 
 const NewTweet = ({ id }) => {
@@ -13,14 +13,16 @@ const NewTweet = ({ id }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <textarea
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder={`What's happening?`}
-      />
-      <button type='submit'>Submit</button>
-    </form>
+    <React.Fragment>
+      <form onSubmit={handleSubmit}>
+        <textarea
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder={`What's happening?`}
+        />
+        <button type='submit'>Submit</button>
+      </form>
+    </React.Fragment>
   );
 };
 export default NewTweet;
