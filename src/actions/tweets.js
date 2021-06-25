@@ -1,4 +1,4 @@
-import { saveTweet } from '../utils/api';
+import { saveLikeToggle, saveTweet } from '../utils/api';
 
 export const ADD_TWEET = 'ADD_TWEET';
 export const RECEIVE_TWEETS = 'RECEIVE_TWEETS';
@@ -17,3 +17,17 @@ export const handleAddTweet = (text, replyingTo = null) => {
   };
 };
 //TODO: TOGGLE LIKES
+const toggleLike = (id, authedUser, likeStatus) => {
+  return {
+    type: TOGGLE_LIKE,
+    id,
+    authedUser,
+    likeStatus,
+  };
+};
+
+export const handleToggleLike = (id, authedUser, likeStatus) => {
+  return (dispatch) => {
+    dispatch(toggleLike(id, authedUser, likeStatus));
+  };
+};

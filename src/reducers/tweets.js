@@ -19,11 +19,27 @@ const tweet = (state = {}, action) => {
           },
         };
       }
+
       return {
         ...state,
         [action.tweet.id]: action.tweet,
         ...replyingTo,
       };
+
+    case TOGGLE_LIKE:
+      return {
+        ...state,
+        [action.id]: {
+          ...state[action.id],
+          likes:
+            action.likeStatus === true
+              ? state[action.id].likes.filter(
+                  (userId) => userId !== action.authedUser
+                )
+              : [...state[action.id].likes, action.authedUser],
+        },
+      };
+
     default:
       return state;
   }

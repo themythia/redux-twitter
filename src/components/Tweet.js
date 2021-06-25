@@ -1,18 +1,26 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { FaReply, FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
+import { handleToggleLike } from '../actions/tweets';
 const Tweet = ({ id }) => {
   const tweets = useSelector((store) => store.tweets);
   const users = useSelector((store) => store.users);
+  const authedUser = useSelector((store) => store.authedUser);
+  const dispatch = useDispatch();
   const tweet = tweets[id];
 
   const getDate = (num) => {
     const dateObj = new Date(num);
     return dateObj.toLocaleString();
   };
-
+  const handleLikes = (e) => {
+    e.preventDefault();
+    const hasLiked = tweet.likes.includes(authedUser) ? true : false;
+    dispatch(handleToggleLike(id, authedUser, hasLiked));
+    console.log(hasLiked);
+    console.log('likes: ', tweet.likes);
+  };
   return (
     <React.Fragment>
       {Object.keys(users).length !== 0 && (
@@ -40,7 +48,10 @@ const Tweet = ({ id }) => {
                   <span>{tweet.replies.length}</span>
                 </div>
                 <div className='tweet-likes'>
-                  <FaHeart className='tweet-like-button' />
+                  <FaHeart
+                    className='tweet-like-button'
+                    onClick={handleLikes}
+                  />
                   <span>{tweet.likes.length}</span>
                 </div>
               </div>
