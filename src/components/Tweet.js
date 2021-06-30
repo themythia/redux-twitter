@@ -1,6 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FaReply, FaHeart } from 'react-icons/fa';
+import {
+  TiHeartFullOutline,
+  TiHeartOutline,
+  TiArrowBackOutline,
+} from 'react-icons/ti';
 import { Link } from 'react-router-dom';
 import { handleToggleLike } from '../actions/tweets';
 const Tweet = ({ id }) => {
@@ -44,19 +48,25 @@ const Tweet = ({ id }) => {
               <p className='tweet-text'>{tweet.text}</p>
               <div className='tweet-right-bottom'>
                 <div className='tweet-replies'>
-                  <FaReply className='tweet-reply-button' />
+                  <TiArrowBackOutline
+                    className='tweet-reply-button'
+                    style={{ color: '#969696' }}
+                  />
                   <span>{tweet.replies.length}</span>
                 </div>
                 <div className='tweet-likes'>
-                  <FaHeart
-                    className='tweet-like-button'
-                    onClick={handleLikes}
-                    style={
-                      tweet.likes.includes(authedUser)
-                        ? { color: 'pink' }
-                        : { color: 'white' }
-                    }
-                  />
+                  {tweet.likes.includes(authedUser) ? (
+                    <TiHeartFullOutline
+                      className='tweet-like-button'
+                      style={{ color: '#e0245e' }}
+                    />
+                  ) : (
+                    <TiHeartOutline
+                      className='tweet-like-button'
+                      style={{ color: '#969696' }}
+                    />
+                  )}
+
                   <span>{tweet.likes.length}</span>
                 </div>
               </div>

@@ -20,7 +20,9 @@ const NewTweet = ({ id }) => {
           onChange={(e) => setInput(e.target.value)}
           placeholder={`What's happening?`}
         />
-        <button type='submit'>Submit</button>
+        <button class='submit-button' type='submit'>
+          Submit
+        </button>
       </form>
     </React.Fragment>
   );

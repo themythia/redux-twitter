@@ -59,16 +59,24 @@ li {
 
 .container {
   position: relative;
-  max-width: 1000px;
+  max-width: 800px;
   min-width: 280px;
   margin: 0 auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .tweet {
   border: 1px white solid;
   border-radius: 3px;
   display: flex;
   flex-direction: row;
+  color: white;
+  padding: 20px 25px;
+  margin: 30px 0px;
 }
 
 .avatar {
@@ -81,6 +89,7 @@ li {
 .tweet-right-bottom {
   display: flex;
   flex-direction: row;
+  font-size: 25px;
 }
 
 .tweet-name {
@@ -91,10 +100,6 @@ li {
 .tweet-text {
   font-size: 20px;
   font-weight: 600;
-}
-
-.text-faded {
-  color: #969696;
 }
 
 .tweet-date {
@@ -119,10 +124,44 @@ li {
 .tweet-like-button {
   margin-right: 10px;
 }
+
+.tweet-reply-button:hover,
 .tweet-like-button:hover {
-  color: purple !important;
+  color: #eb30c1 !important;
 }
 
 .active {
   text-decoration: underline;
+  font-weight: 600;
+}
+
+.text-faded {
+  color: #969696;
+}
+
+.nav-link {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+textarea {
+  width: 500px;
+  height: 75px;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.submit-button {
+  background-color: #eb30c1;
+  color: white;
+  border: none;
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
