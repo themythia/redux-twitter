@@ -71,6 +71,7 @@ li {
 
 .tweet {
   border: 1px white solid;
+  width: 760px;
   border-radius: 3px;
   display: flex;
   flex-direction: row;
@@ -164,4 +165,9 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
