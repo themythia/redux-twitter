@@ -7,6 +7,7 @@ import {
 } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
 import { handleToggleLike } from '../actions/tweets';
+
 const Tweet = ({ id }) => {
   const tweets = useSelector((store) => store.tweets);
   const users = useSelector((store) => store.users);
@@ -59,11 +60,13 @@ const Tweet = ({ id }) => {
                     <TiHeartFullOutline
                       className='tweet-like-button'
                       style={{ color: '#e0245e' }}
+                      onClick={handleLikes}
                     />
                   ) : (
                     <TiHeartOutline
                       className='tweet-like-button'
                       style={{ color: '#969696' }}
+                      onClick={handleLikes}
                     />
                   )}
 

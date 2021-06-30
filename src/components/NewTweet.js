@@ -12,7 +12,6 @@ const NewTweet = ({ id }) => {
     e.preventDefault();
     dispatch(handleAddTweet(input, id));
     setInput('');
-    console.log('id', id);
     setRedirectStatus(id ? false : true);
   };
 
